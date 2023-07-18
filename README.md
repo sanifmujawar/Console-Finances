@@ -10,7 +10,7 @@ The deployed version of Console Finances can be accessed through the following l
 You have been provided with a financial dataset in the `starter/index.js` file. The dataset is composed of arrays with two fields: Date and Profit/Losses.
 
 ## ✅ Acceptance Criteria
-* Create a new GitHub repo called "Sanif-Mujawar-Console-Finances". Then, clone it to your computer.
+* Create a new GitHub repo called "Console-Finances". Then, clone it to your computer.
 * Copy the starter files into your local git repository.
 * Write JavaScript code that analyzes the records to calculate each of the following:
   * The total number of months included in the dataset.
