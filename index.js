@@ -86,3 +86,47 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+//The total number of months calculation
+let totalMonths = finances.length;
+
+//The net total amount of Profit/Losses over the entire period
+let totalAmount = 0;
+for (let i = 0; i < finances.length; i++) {
+  totalAmount += finances[i][1];
+}
+
+//The average of the changes in Profit/Losses over the entire period.
+let totalChange = 0;
+for (let i = 1; i < finances.length; i++) {
+  totalChange += finances[i][1] - finances[i - 1][1];
+}
+let averageChange = (totalChange / (finances.length - 1)).toFixed(2);
+
+//The greatest increase in profits (date and amount) over the entire period
+//The greatest decrease in losses (date and amount) over the entire period.
+let greatestIncrease = 0;
+let greatestIncreaseMonth;
+let greatestDecrease = 0;
+let greatestDecreaseMonth;
+for (let i = 1; i < finances.length; i++) {
+  let theChange = finances[i][1] - finances[i - 1][1];
+  if (theChange > greatestIncrease) {
+    greatestIncrease = theChange;
+    greatestIncreaseMonth = finances[i][0];
+  }
+  if (theChange < greatestDecrease) {
+    greatestDecrease = theChange;
+    greatestDecreaseMonth = finances[i][0];
+  }
+}
+
+console.log(`
+Financial Analysis
+------------------
+Total Months: ${totalMonths}
+Total: $${totalAmount}
+Average Change: $${averageChange}
+Greatest Increase in Profits: ${greatestIncreaseMonth} ($${greatestIncrease})
+Greatest Decrease in Profits: ${greatestDecreaseMonth} ($${greatestDecrease})
+`);
